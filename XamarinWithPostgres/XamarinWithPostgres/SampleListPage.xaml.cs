@@ -18,5 +18,11 @@ namespace XamarinWithPostgres
             InitializeComponent();
             BindingContext = new ListDataViewModel();
         }
+
+        private void LstData_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            ListItem myItem = (ListItem)e.Item;
+            DisplayAlert("Keterangan", $"Anda memilih item dengan judul {myItem.Title}", "OK");
+        }
     }
 }

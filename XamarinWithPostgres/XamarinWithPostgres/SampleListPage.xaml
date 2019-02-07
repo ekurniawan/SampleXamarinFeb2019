@@ -4,7 +4,8 @@
              x:Class="XamarinWithPostgres.SampleListPage" Title="Sample ListView">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding ListItems}">
+            <ListView x:Name="lstData" ItemsSource="{Binding ListItems}" 
+                      ItemTapped="LstData_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding Description}" 
