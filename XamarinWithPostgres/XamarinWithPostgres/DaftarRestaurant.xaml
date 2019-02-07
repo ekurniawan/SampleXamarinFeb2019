@@ -4,9 +4,14 @@
              x:Class="XamarinWithPostgres.DaftarRestaurant" Title="Restaurant">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Daftar Restaurant"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="listRestaurant">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding restaurantid}" 
+                                  Detail="{Binding namarestaurant}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

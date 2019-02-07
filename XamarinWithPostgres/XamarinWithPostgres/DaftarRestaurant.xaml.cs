@@ -6,15 +6,24 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinWithPostgres.Services;
 
 namespace XamarinWithPostgres
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DaftarRestaurant : ContentPage
-	{
-		public DaftarRestaurant ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DaftarRestaurant : ContentPage
+    {
+        private RestaurantServices restoService;
+        public DaftarRestaurant()
+        {
+            InitializeComponent();
+            restoService = new RestaurantServices();
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            listRestaurant.ItemsSource = await restoService.GetAllData();
+        }
+    }
 }
