@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinWithPostgres.SampleListPage" Title="Sample ListView">
+             x:Class="XamarinWithPostgres.SampleListPage" Title="ListView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="menuAdd" Text="Tambah Resto" Icon="ic_add.png" Order="Primary" />
+        <ToolbarItem x:Name="menuResto" Text="Daftar Restaurant" Order="Secondary" Clicked="MenuResto_Clicked" />
+        <ToolbarItem x:Name="menuKategori" Text="Daftar Kategori" Order="Secondary" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lstData" ItemsSource="{Binding ListItems}" 

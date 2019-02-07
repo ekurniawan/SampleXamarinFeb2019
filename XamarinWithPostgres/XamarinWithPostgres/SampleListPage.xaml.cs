@@ -22,7 +22,16 @@ namespace XamarinWithPostgres
         private void LstData_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             ListItem myItem = (ListItem)e.Item;
-            DisplayAlert("Keterangan", $"Anda memilih item dengan judul {myItem.Title}", "OK");
+            //DisplayAlert("Keterangan", $"Anda memilih item dengan judul {myItem.Title}", "OK");
+            DetailPage detailPage = new DetailPage();
+            detailPage.BindingContext = myItem;
+            Navigation.PushAsync(detailPage);
+        }
+
+        private void MenuResto_Clicked(object sender, EventArgs e)
+        {
+            var restaurantPage = new DaftarRestaurant();
+            Navigation.PushAsync(restaurantPage);
         }
     }
 }
