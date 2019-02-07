@@ -5,11 +5,21 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lstData" ItemsSource="{Binding ListItems}" 
-                      ItemTapped="LstData_ItemTapped">
+                      ItemTapped="LstData_ItemTapped" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Title}" Detail="{Binding Description}" 
-                                TextColor="Blue" DetailColor="Red" />
+                        <!--<ImageCell Text="{Binding Title}" Detail="{Binding Description}" 
+                               ImageSource="{Binding Picture}" TextColor="Blue" DetailColor="Red" />-->
+                        <ViewCell>
+                            <StackLayout>
+                                <Image Source="{Binding Picture}" WidthRequest="100" />
+                                <Label Text="{Binding Title}" TextColor="Red" FontAttributes="Bold" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Description}" TextColor="Blue" />
+                                    <Label Text="{Binding Price,StringFormat='{0:N0}'}" TextColor="Green" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

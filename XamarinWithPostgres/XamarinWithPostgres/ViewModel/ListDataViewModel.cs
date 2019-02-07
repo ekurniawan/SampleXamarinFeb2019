@@ -13,15 +13,21 @@ namespace XamarinWithPostgres.ViewModel
                 new ListItem
                 {
                     Title = "Sate Klathak Pak Jeje",
-                    Description = "Sate Klathak Pak Jeje Pasar Jejeran"
+                    Description = "Sate Klathak Pak Jeje Pasar Jejeran",
+                    Picture = "satu.jpg",
+                    Price = 20000
                 },
                 new ListItem {
                     Title = "Soto Kadipiro",
-                    Description="Soto Kadipiro jalan Wates"
+                    Description="Soto Kadipiro jalan Wates",
+                    Picture = "dua.jpg",
+                    Price = 15000
                 },
                 new ListItem{
                     Title="Bakmi Jawa Mbah Hadi",
-                    Description="Bakmi Jawa Mbah Hadi terban"
+                    Description="Bakmi Jawa Mbah Hadi terban",
+                    Picture = "tiga.jpg",
+                    Price = 22000
                 }
             };
         }
